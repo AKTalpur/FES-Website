@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*HOMEPAGE*/
+
+nav {
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px; /*Padding, Margin, and similar values are kept divisible by 8 so that the website flow is kept nicer.*/
+    background-color: #cafdff;
+}
+
+.logo {
+    width: 300px;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+    padding-left: 16px;
+}
+
+a {
+    color: #000;
+    font-size: 24px;
+    font-weight: 700; /*Since we imported the Roboto 700 bold font-type.*/
+}
+
+header {
+    background-color: #eadcff;
+    height: calc(100vh - 70px); /*70px is the height of nav bar. We subtract the nav height from the
+    full-page height to make a direct jump from Header section to About section upon scrolling.*/
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 72px;
+}
+
+.subheader {
+    font-size: 36px;
+    margin: 16px 0 24px 0;
+}
+
+button {
+    background-color: #05c7cf;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.row {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about, #discord, #contact, footer {
+    padding: 48px 0;
+}
+
+/*ABOUT*/
+
+#about {
+    background-color: #f8ffdc;
+}
+
+h2 {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.section__description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__img--wrapper {
+    width: 40%; /*figure div will occupy or fill 40% width of the about section.*/
+}
+
+img {
+    width: 100%; /*img will occupy or fill 100% width of the figure div.*/
+}
+
+.section__description--wrapper {
+    width: 60%; /*paragraphs will occupy or fill 60% remaining width of the about section.*/
+}
+
+.section__description--para {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.section__description--wrapper, .section__img--wrapper {
+    padding: 0 24px;
+}
+
+/*DISCORD*/
+
+#discord {
+    background-color: #cefeff;
+}
+
+/*CONTACT*/
+
+#contact {
+    background-color: #dce9ff;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;*/
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto; /*OR in the #contact section above: display: flex; flex-direction: column; align-items: center;
+    when flex-direction is set to column then align-items will center the content horizontally.*/
+    padding: 0 24px;
+}
+
+input, textarea {
+    margin-bottom: 24px;
+    font-size: 20px;
+    padding: 6px 12px;
+}
+
+
+/*The remaining layout settings in Discord and Contact sections are done the same way as in the About section using the BEM method.
+Therefore, the class names of img, para, description, wrappers, are the same, and it causes the same settings to apply.*/
+
+/*FOOTER*/
+
+footer {
+    background-color: #aaf5ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__logo {
+    max-width: 480px;
+    margin-bottom: 16px;
+}
+
+.footer__links--wrapper {
+    margin-bottom: 32px;
+}
+
+.footer__link {
+    padding: 0 16px;
+}
+
+/*Website Responsiveness*/
+
+/*For Small Phones, Large Smartphones, and Tablets*/
+@media (max-width: 728px) {
+
+    /*HOMEPAGE*/
+
+    .row {
+        flex-direction: column;
+    }
+
+    .homepage__description {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .homepage__description--button {
+        max-width: 240px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 60px;
+    }
+
+    .subheader {
+        text-align: center;
+        font-size: 28px;
+    }
+
+    ul {
+        display: none;
+    }
+
+    /*ABOUT*/
+
+    .section__description {
+        flex-direction: column;
+    }
+
+    .section__description--wrapper {
+        width: 100%;
+    }
+
+    .section__img--wrapper {
+        width: 100%;
+    }
+
+    #discord .section__description {
+        flex-direction: column-reverse;
+    }
+
+    footer {
+        padding: 48px 24px;
+    }
+
+    .footer__logo {
+        max-width: 360px;
+    }
+
+    .footer__link {
+        padding: 0 4px;
+        font-size: 18px;
+    }
+
+    .footer__links--wrapper {
+        margin-bottom: 24px;
+    }
+}
+
